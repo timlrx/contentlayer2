@@ -1,5 +1,3 @@
-const { withContentlayer } = require('next-contentlayer')
+const { withContentlayer } = require('next-contentlayer2')
 
-module.exports = withContentlayer({
-  experimental: { appDir: true, },
-})
+module.exports = withContentlayer({})

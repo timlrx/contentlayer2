@@ -1,6 +1,6 @@
 {
-  "name": "next-contentlayer",
-  "version": "0.3.4",
+  "name": "next-contentlayer2",
+  "version": "0.4.4",
   "type": "module",
   "main": "./dist/index-cjs.cjs",
   "sideEffects": false,
@@ -35,22 +35,22 @@
     "./package.json"
   ],
   "scripts": {
-    "prepack": "sed '/^import\\|^export/d' dist/index-cjs.js > dist/index-cjs.cjs; cp src/hooks/jsx-runtime.cjs dist/hooks/jsx-runtime.cjs"
+    "prepack": "awk '!/^export|^import/' dist/index-cjs.js > dist/index-cjs.cjs; cp src/hooks/jsx-runtime.cjs dist/hooks/jsx-runtime.cjs"
   },
   "dependencies": {
-    "@contentlayer/core": "workspace:*",
-    "@contentlayer/utils": "workspace:*"
+    "@contentlayer2/core": "workspace:*",
+    "@contentlayer2/utils": "workspace:*"
   },
   "peerDependencies": {
-    "contentlayer": "workspace:*",
-    "next": "^12 || ^13",
+    "contentlayer2": "workspace:*",
+    "next": "^12 || ^13 || ^14",
     "react": "*",
     "react-dom": "*"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
-    "next": "^13.4.7",
+    "next": "^14.1.0",
     "typescript": "^5.1.6",
     "webpack": "^5.88.1"
   },
