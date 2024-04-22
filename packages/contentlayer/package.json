@@ -76,9 +76,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/contentlayerdev/contentlayer.git"
+    "url": "git+https://github.com/timlrx/contentlayer2.git"
   },
   "bug": {
-    "url": "https://github.com/contentlayerdev/contentlayer/issues"
+    "url": "https://github.com/timlrx/contentlayer2/issues"
   }
 }

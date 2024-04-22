@@ -1,10 +1,10 @@
-# <img src="https://i.imgur.com/fdY8IX2.png" height="30" />&nbsp;&nbsp;Contentlayer [![](https://badgen.net/npm/v/contentlayer)](https://www.npmjs.com/package/contentlayer) [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/fk83HNECYJ)
+# <img src="https://i.imgur.com/fdY8IX2.png" height="30" />&nbsp;&nbsp;Contentlayer [![](https://badgen.net/npm/v/contentlayer2)](https://www.npmjs.com/package/contentlayer2) [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/fk83HNECYJ)
 
 Contentlayer is a content SDK that validates and transforms your content into type-safe JSON data you can easily `import` into your application's pages.
 
 [![Video Thumbnail](https://i.imgur.com/y3p4hDN.png)](https://www.youtube.com/watch?v=58Pj4a4Us7A)
 
-**⚠️ Contentlayer is currently in beta. There might still be breaking changes before the upcoming 1.0 release.**
+**⚠️ This is a maintained Contentlayer fork. No major breaking changes are expected while [discussions are on-going about the project's future](https://github.com/contentlayerdev/contentlayer/issues/651#issuecomment-2030335434).**
 
 ## Getting Started
 
@@ -52,8 +52,6 @@ Join [our Discord community](https://discord.gg/fk83HNECYJ) to get help, suggest
 - [ped.ro](https://ped.ro)
 - [GraphCMS Docs](https://graphcms.com/docs)
 - [axeldelafosse.com](https://axeldelafosse.com) ([Source](https://github.com/axeldelafosse/axeldelafosse))
-- [arthurvdiniz.me](https://arthurvdiniz.me) ([Source](https://github.com/arthurvdiniz/me))
-- [imadatyatalah.vercel.app](https://imadatyatalah.vercel.app) ([Source](https://github.com/imadatyatalah/imadatyatalah.me))
 - [jahir.dev](https://jahir.dev/) ([Source](https://github.com/jahirfiquitiva/jahir.dev))
 - [samuelkraft.com](https://samuelkraft.com) ([Source](https://github.com/samuelkraft/samuelkraft-next))
 - [nirmalyaghosh.com](https://nirmalyaghosh.com) ([Source](https://github.com/ghoshnirmalya/nirmalyaghosh.com))
@@ -66,9 +64,7 @@ Join [our Discord community](https://discord.gg/fk83HNECYJ) to get help, suggest
 - [alpesdream.vercel.app](https://alpesdream.vercel.app/) ([Source](https://github.com/patrick-xin/alpesdream))
 - [bayukurnia.com](https://bayukurnia.com) ([Source](https://github.com/bwyx/bayukurnia.com))
 - [makersleague.de](https://makersleague.de) ([Source](https://github.com/timoclsn/makersleague.de))
-- [euisblue.me](https://www.euisblue.me/) ([Source](https://github.com/euisblue/bluelog))
 - [thismodernweb.com](https://thismodernweb.com) ([Source](https://github.com/pmarsceill/this-modern-web))
-- [scriptbar-snippets.tryapp.us](https://scriptbar-snippets.tryapp.us) ([Source](https://github.com/datduyng/scriptbar-snippets))
 - [nikosantis.dev](https://nikosantis.dev) ([Source](https://github.com/nikosantis/nikosantis.dev))
 - [phong.vn](https://phong.vn) ([Source](https://github.com/0xPhong/phong.vn))
 - [dvl.sh](https://dvl.sh)
@@ -91,15 +87,11 @@ Join [our Discord community](https://discord.gg/fk83HNECYJ) to get help, suggest
 - [igorkowalczyk.dev](https://igorkowalczyk.dev) ([Source](https://github.com/igorkowalczyk/igorkowalczyk.github.io))
 - [christianpenrod.com](https://christianpenrod.com) ([Source](https://github.com/penrodlol/christianpenrod))
 - [xahidex.com](https://xahidex.com)
-- [hellonext.co](https://hellonext.co)
-- [heykapil.in](https://heykapil.in) ([Source](https://github.com/heykapil/new-blog/))
 - [adrianmato.art](https://adrianmato.art)
 - [livropog.com.br](https://livropog.com.br) ([Source](https://github.com/josenaldo/livro-pog))
-- [rofireza.com](https://rofireza.com/) ([Source](https://github.com/arrofirezasatria/rofireza.com))
 - [jakubh.com](https://jakubh.com/) ([Source](https://github.com/ivenuss/jakubh.com))
 - [fiqry.dev](https://fiqry.dev/) ([Source](https://github.com/fiqryq/fiqry.dev))
 - [soapbox.pub](https://soapbox.pub/) ([Source](https://gitlab.com/soapbox-pub/soapbox.pub))
-- [hafidzamr.dev](https://hafidzamr.dev/) ([Source](https://github.com/hafidzamr/hafidzamr.dev))
 - [anudeepreddy.dev](https://anudeepreddy.dev/)
 - [nikhilmohite.com](https://nikhilmohite.com/)
 - [shenlu.me](https://shenlu.me) ([Source](https://github.com/shenlu89/shenlu89.github.io))
@@ -117,6 +109,5 @@ Join [our Discord community](https://discord.gg/fk83HNECYJ) to get help, suggest
 - [zanreal.net](https://www.zanreal.net/)
 - [devtella](https://devtella.vercel.app/)
 - [Modern Developer Blog Template (Digital Garden Starter)](https://github.com/thedevdavid/digital-garden/)([Source](https://github.com/thedevdavid/digital-garden/))
-- [floriankiem.com](floriandwt.com) ([Source](https://github.com/floriandwt/florians-website/))
 
 Are you using Contentlayer? Please add your page (and repo) to the end of the list via a PR. 🙏
