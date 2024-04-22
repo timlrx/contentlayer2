@@ -11,7 +11,7 @@
 #### ... or locally
 
 ```sh
-curl https://codeload.github.com/contentlayerdev/contentlayer/tar.gz/main | \
+curl https://codeload.github.com/timlrx/contentlayer2/tar.gz/main | \
   tar -xz --strip=2 contentlayer-main/examples/starter
 ```
 
