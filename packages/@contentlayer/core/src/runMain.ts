@@ -40,7 +40,7 @@ export const runMain =
             yield* $(
               T.log(`\
 This error shouldn't have happened. Please consider opening a GitHub issue with the stack trace below here:
-https://github.com/contentlayerdev/contentlayer/issues`),
+https://github.com/timlrx/contentlayer2/issues`),
             )
           }
 

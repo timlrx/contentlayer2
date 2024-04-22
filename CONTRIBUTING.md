@@ -1,6 +1,6 @@
 # Contributing to Contentlayer
 
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/contentlayerdev/contentlayer)
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/timlrx/contentlayer2)
 
 ## Development setup
 
@@ -9,7 +9,7 @@ Contentlayer is developed as a mono-repo using Yarn.
 ### Cloning
 
 ```sh
-git clone --recurse-submodules git://github.com/contentlayerdev/contentlayer.git
+git clone --recurse-submodules git://github.com/timlrx/contentlayer2.git
 ```
 
 #### Checkout submodules

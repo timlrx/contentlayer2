@@ -4,9 +4,9 @@
   "commit": false,
   "fixed": [
     [
-      "@contentlayer/*",
-      "contentlayer",
-      "next-contentlayer"
+      "@contentlayer2/*",
+      "contentlayer2",
+      "next-contentlayer2"
     ]
   ],
   "access": "public",
