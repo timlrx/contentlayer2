@@ -24,7 +24,7 @@ export const run = async () => {
 
   const cli = new Cli({
     binaryLabel: `Contentlayer CLI`,
-    binaryName: process.env['CL_DEBUG'] ? `${node} ${app}` : 'contentlayer',
+    binaryName: process.env['CL_DEBUG'] ? `${node} ${app}` : 'contentlayer2',
     binaryVersion: contentlayerVersion,
   })
 
