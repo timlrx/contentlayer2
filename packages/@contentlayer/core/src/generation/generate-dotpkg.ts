@@ -6,6 +6,7 @@ import type { GetContentlayerVersionError } from '@contentlayer2/utils/node'
 import { getContentlayerVersion } from '@contentlayer2/utils/node'
 import { camelCase } from 'camel-case'
 import type { PackageJson } from 'type-fest'
+import * as URL from 'url'
 
 import { ArtifactsDir } from '../ArtifactsDir.js'
 import type { HasCwd } from '../cwd.js'
@@ -131,7 +132,7 @@ const successCallback = (onSuccess: SuccessCallback | undefined) => {
     T.tapSync((path) => console.log('successCallback', path)),
     T.chain((generatedPkgPath) =>
       T.tryCatchPromise(
-        () => onSuccess(() => import(filePathJoin(generatedPkgPath, 'generated', 'index.mjs'))),
+        () => onSuccess(() => import(URL.pathToFileURL(filePathJoin(generatedPkgPath, 'generated', 'index.mjs')).href)),
         (error) => new SuccessCallbackError({ error }),
       ),
     ),
