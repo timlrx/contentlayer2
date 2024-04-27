@@ -12,16 +12,15 @@ import { getCwd } from './cwd.js'
 export const getDirPath = ({ cwd }: { cwd: AbsolutePosixFilePath }): AbsolutePosixFilePath =>
   filePathJoin(cwd, '.contentlayer' as AbsolutePosixFilePath)
 
-export const mkdir: T.Effect<OT.HasTracer & HasCwd & fs.HasFs, fs.MkdirError, AbsolutePosixFilePath> = T.gen(function* (
-  $,
-) {
-  const cwd = yield* $(getCwd)
-  const dirPath = getDirPath({ cwd })
+export const mkdir: T.Effect<OT.HasTracer & HasCwd & fs.HasFs, fs.MkdirError, AbsolutePosixFilePath> = T.gen(
+  function* ($) {
+    const cwd = yield* $(getCwd)
+    const dirPath = getDirPath({ cwd })
+    yield* $(fs.mkdirp(dirPath))
 
-  yield* $(fs.mkdirp(dirPath))
-
-  return dirPath
-})
+    return dirPath
+  },
+)
 
 export const getCacheDirPath: T.Effect<
   OT.HasTracer & HasCwd & fs.HasFs,

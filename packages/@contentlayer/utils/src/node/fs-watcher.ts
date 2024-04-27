@@ -19,31 +19,46 @@ import { unknownFilePath } from '../file-paths.js'
 export class FileAdded {
   readonly _tag = 'FileAdded'
 
-  constructor(public path: UnknownFilePath, public stats: O.Option<fs.Stats>) {}
+  constructor(
+    public path: UnknownFilePath,
+    public stats: O.Option<fs.Stats>,
+  ) {}
 }
 
 export class FileRemoved {
   readonly _tag = 'FileRemoved'
 
-  constructor(public path: UnknownFilePath, public stats: O.Option<fs.Stats>) {}
+  constructor(
+    public path: UnknownFilePath,
+    public stats: O.Option<fs.Stats>,
+  ) {}
 }
 
 export class FileChanged {
   readonly _tag = 'FileChanged'
 
-  constructor(public path: UnknownFilePath, public stats: O.Option<fs.Stats>) {}
+  constructor(
+    public path: UnknownFilePath,
+    public stats: O.Option<fs.Stats>,
+  ) {}
 }
 
 export class DirectoryAdded {
   readonly _tag = 'DirectoryAdded'
 
-  constructor(public path: UnknownFilePath, public stats: O.Option<fs.Stats>) {}
+  constructor(
+    public path: UnknownFilePath,
+    public stats: O.Option<fs.Stats>,
+  ) {}
 }
 
 export class DirectoryRemoved {
   readonly _tag = 'DirectoryRemoved'
 
-  constructor(public path: UnknownFilePath, public stats: O.Option<fs.Stats>) {}
+  constructor(
+    public path: UnknownFilePath,
+    public stats: O.Option<fs.Stats>,
+  ) {}
 }
 
 export type FileSystemEvent = FileAdded | FileRemoved | FileChanged | DirectoryAdded | DirectoryRemoved

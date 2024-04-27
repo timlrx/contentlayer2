@@ -23,8 +23,8 @@ type TypeNameOneOrMany = GetDocumentTypeNamesGen | GetDocumentTypeNamesGen[]
 type TypeForTypeNameOneOrMany<N extends TypeNameOneOrMany> = N extends GetDocumentTypeNamesGen
   ? GetDocumentTypeMapGen<Document>[N]
   : N extends GetDocumentTypeNamesGen[]
-  ? GetDocumentTypeMapGen<Document>[N[number]]
-  : never
+    ? GetDocumentTypeMapGen<Document>[N[number]]
+    : never
 
 function is<N extends TypeNameOneOrMany>(typeName: N, _: any): _ is TypeForTypeNameOneOrMany<N>
 function is<N extends TypeNameOneOrMany>(typeName: N): (_: any) => _ is TypeForTypeNameOneOrMany<N>
