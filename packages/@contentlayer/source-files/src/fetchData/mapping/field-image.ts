@@ -57,9 +57,8 @@ const getImageFieldData = ({
       const documentDirPath = utils.dirname(documentFilePath)
 
       const filePath = utils.filePathJoin(documentDirPath, imagePath)
-      const absoluteFilePath = URL.pathToFileURL(utils.filePathJoin(contentDirPath, documentDirPath, imagePath)).href
+      const absoluteFilePath = utils.filePathJoin(contentDirPath, documentDirPath, imagePath)
       const relativeFilePath = utils.relative(utils.filePathJoin(contentDirPath, documentDirPath), absoluteFilePath)
-
       const fileBuffer = yield* $(fs.readFileBuffer(absoluteFilePath))
 
       const { resizedData, height, width, format } = yield* $(processImage(fileBuffer))
