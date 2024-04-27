@@ -16,7 +16,6 @@ export const mkdir: T.Effect<OT.HasTracer & HasCwd & fs.HasFs, fs.MkdirError, Ab
   function* ($) {
     const cwd = yield* $(getCwd)
     const dirPath = getDirPath({ cwd })
-
     yield* $(fs.mkdirp(dirPath))
 
     return dirPath
