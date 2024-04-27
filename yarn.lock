@@ -438,7 +438,6 @@ __metadata:
   dependencies:
     "@effect-ts/core": ^0.60.5
     "@effect-ts/otel": ^0.15.1
-    "@effect-ts/otel-exporter-trace-otlp-grpc": ^0.15.1
     "@effect-ts/otel-sdk-trace-node": ^0.15.1
     "@js-temporal/polyfill": ^0.4.4
     "@opentelemetry/api": ^1.8.0
@@ -481,21 +480,6 @@ __metadata:
   dependencies:
     "@effect-ts/system": ^0.57.5
   checksum: c1236ce2f261a4547379061c80eb55ca476d3638289b2d2b54fb491aabe2ad9e325e1774c948f34572d9bceb07c0e74f1be2d69b060673c0b1df44f149dae164
-  languageName: node
-  linkType: hard
-
-"@effect-ts/otel-exporter-trace-otlp-grpc@npm:^0.15.1":
-  version: 0.15.1
-  resolution: "@effect-ts/otel-exporter-trace-otlp-grpc@npm:0.15.1"
-  dependencies:
-    "@effect-ts/otel": ^0.15.1
-  peerDependencies:
-    "@effect-ts/core": ^0.60.2
-    "@opentelemetry/api": ^1.4.0
-    "@opentelemetry/core": ^1.13.0
-    "@opentelemetry/exporter-trace-otlp-grpc": ^0.39.0
-    "@opentelemetry/sdk-trace-base": ^1.13.0
-  checksum: 5f81693c725f9bdf515374752437c0d20d65b123ca2235ba9cedf477308e43c115edb8b8b4934e19d8e89f52307d5001efe6299e4ca43734459fc37aab9bad30
   languageName: node
   linkType: hard
 

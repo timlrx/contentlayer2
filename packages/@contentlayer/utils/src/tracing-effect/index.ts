@@ -3,10 +3,11 @@ import type { Clock } from '@effect-ts/core/Effect/Clock'
 import type * as L from '@effect-ts/core/Effect/Layer'
 import type { Has } from '@effect-ts/core/Has'
 import * as OT from '@effect-ts/otel'
-import { LiveSimpleProcessor, makeOTLPTraceExporterConfigLayer } from '@effect-ts/otel-exporter-trace-otlp-grpc'
 import * as OTNode from '@effect-ts/otel-sdk-trace-node'
 import { Resource } from '@opentelemetry/resources'
 import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions'
+
+import { LiveSimpleProcessor, makeOTLPTraceExporterConfigLayer } from './otel-exporter-trace-otlp-grpc.js'
 
 //
 // Jaeger Tracer (via Grpc Collector)

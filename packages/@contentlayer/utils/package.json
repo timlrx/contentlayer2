@@ -59,7 +59,6 @@
   "dependencies": {
     "@effect-ts/core": "^0.60.5",
     "@effect-ts/otel": "^0.15.1",
-    "@effect-ts/otel-exporter-trace-otlp-grpc": "^0.15.1",
     "@effect-ts/otel-sdk-trace-node": "^0.15.1",
     "@js-temporal/polyfill": "^0.4.4",
     "@opentelemetry/api": "^1.8.0",
