@@ -4,6 +4,7 @@ import { fs, unknownToRelativePosixFilePath } from '@contentlayer2/utils'
 import { identity, OT, pipe, T } from '@contentlayer2/utils/effect'
 import type * as ImageScript from 'imagescript'
 import type sharp from 'sharp'
+import * as path from 'node:path'
 
 import { FetchDataError } from '../../errors/index.js'
 import type { HasDocumentContext } from '../DocumentContext.js'
@@ -55,8 +56,8 @@ const getImageFieldData = ({
       const imagePath = unknownToRelativePosixFilePath(imagePath_, cwd)
       const documentDirPath = utils.dirname(documentFilePath)
 
-      const filePath = utils.filePathJoin(documentDirPath, imagePath)
-      const absoluteFilePath = utils.filePathJoin(contentDirPath, documentDirPath, imagePath)
+      const filePath = path.normalize(utils.filePathJoin(documentDirPath, imagePath))
+      const absoluteFilePath = path.normalize(utils.filePathJoin(contentDirPath, documentDirPath, imagePath))
       const relativeFilePath = utils.relative(utils.filePathJoin(contentDirPath, documentDirPath), absoluteFilePath)
       const fileBuffer = yield* $(fs.readFileBuffer(absoluteFilePath))
 
