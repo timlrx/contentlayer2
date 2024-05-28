@@ -1,1 +1,1 @@
-export { getMDXComponent } from 'mdx-bundler/client'
+export { getMDXComponent } from 'mdx-bundler/client/index.js'
