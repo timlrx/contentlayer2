@@ -6,6 +6,8 @@ Contentlayer is a content SDK that validates and transforms your content into ty
 
 **⚠️ This is a maintained Contentlayer fork. No major breaking changes are expected while [discussions are on-going about the project's future](https://github.com/contentlayerdev/contentlayer/issues/651#issuecomment-2030335434).**
 
+> 🚚 For some tips on migrating from the official Contentlayer packages, see the [migration guide](#migrating-to-the-fork) below.
+
 ## Getting Started
 
 The video above is a brief look at Contentlayer. Explore further with our [example projects](https://www.contentlayer.dev/examples), which you can clone to try out locally or in via Gitpod or Stackblitz in your browser.
@@ -14,8 +16,78 @@ The video above is a brief look at Contentlayer. Explore further with our [examp
 
 [![Contentlayer Playground](https://i.imgur.com/ux4iolO.png)](https://stackblitz.com/edit/github-ekmxur?file=posts%2Fchange-me.mdx)
 
-### Tutorial & Documentation
+### Migrating to the fork
 
+In many cases, migrating to the **contentlayer2** fork from the official packages may be as simple as switching to the forked packages. However, you may encounter a few issues, so this guide will walk you through the process and address those.
+
+#### Switching to fork packages
+
+Since **contentlayer2** doesn't have any breaking API changes, hopefully this is all you need to do. 🤞🏻
+
+1. Replace any Contentlayer packages in your **package.json** with the corresponding fork package and [new version](https://github.com/timlrx/contentlayer2/releases)
+
+    ```diff
+    -    "contentlayer": "^0.3.3",
+    +    "contentlayer2": "^0.4.6",
+    -    "next-contentlayer": "^0.3.3",
+    +    "next-contentlayer2": "^0.4.6",
+    ```
+ 
+2. Update any existing imports to the fork packages
+
+     **contentlayer.config.ts**
+     
+     ```diff
+     -import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+     +import { defineDocumentType, makeSource } from 'contentlayer2/source-files';
+     ```
+
+     **next.config.js**
+     
+     ```diff
+     -const { withContentlayer } = require('next-contentlayer');
+     +const { withContentlayer } = require('next-contentlayer2');
+     ```
+ 
+3. Update any package scripts to reference the new `contentlayer2` executable 
+
+    **package.json**
+    
+    ```diff
+    {
+       "scripts": {
+    -    "build:content": "contentlayer build",
+    +    "build:content": "contentlayer2 build",
+       }
+    }
+    ```
+ 
+4. Run a `contentlayer2 build` and start your **Next.js** application. If you don't see any errors, you're likely good to go! 🥳
+   
+   Otherwise, see below for common compatibility issues. ❤️‍🩹
+
+#### Upgrading incompatible Remark and Rehype packages
+
+While **contentlayer2** is API compatible with **contentlayer**, it has been updated to use the latest ([**v11+**](https://github.com/unifiedjs/unified/releases/tag/11.0.0)) [Unified](https://unifiedjs.com/) toolchain. If your configuration includes [Remark](https://remark.js.org/) or [Rehype](https://github.com/rehypejs/rehype) plugins, you'll likely need to upgrade them.
+
+##### Common plugins and upgrade paths
+
+- [**remark-gfm**](https://github.com/remarkjs/remark-gfm) → simply upgrade to **[4.0.0](https://github.com/remarkjs/remark-gfm/releases/tag/4.0.0)**
+- [**remark-slug**](https://github.com/remarkjs/remark-slug) → switch to [**rehype-slug**](https://github.com/rehypejs/rehype-slug) and move the plugin from `remarkPlugins` to `rehypePlugins` in your Contentlayer configuration
+- For any custom **Remark** plugins, you'll need to upgrade **unified** itself to [**11.0.0**](https://github.com/unifiedjs/unified/releases/tag/11.0.0) or higher along with packages such as [**unist-util-visit**](https://github.com/syntax-tree/unist-util-visit/releases/tag/5.0.0)
+
+#### TypeScript 5.0
+
+The **ts-pattern** dependency has been updated to the latest version in **contentlayer2**. This version of **ts-pattern** [requires **TypeScript 5+**](https://github.com/gvergnaud/ts-pattern?tab=readme-ov-file#compatibility-with-different-typescript-versions). Unfortunately, it seems the **ts-pattern** definition files cause compilation errors on older versions of TypeScript, even when [`skipLibCheck`](https://www.typescriptlang.org/tsconfig/#skipLibCheck) is set to `true` in your **tsconfig.json**.
+
+If you can't or don't want to upgrade to TypeScript 5+ yet, you can use your package manager to force **ts-pattern** [**4.3.0**](https://github.com/gvergnaud/ts-pattern/releases/tag/v4.3.0) to be installed instead.
+
+- For **npm** use the [`overrides`](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#overrides) field
+- For **pnpm** use the [`overrides`](https://pnpm.io/package_json#pnpmoverrides) field
+- For **Yarn** use the [`resolutions`](https://yarnpkg.com/configuration/manifest#resolutions) field
+
+### Tutorial & Documentation
+Follow [the tutorial](https://www.contentlayer.dev/docs/getting-started) to get started building your own project. Or explore [the full documentation](https://www.contentlayer.dev/docs).
 Follow [the tutorial](https://www.contentlayer.dev/docs/getting-started) to get started building your own project. Or explore [the full documentation](https://www.contentlayer.dev/docs).
 
 ## Features
