@@ -2,9 +2,19 @@
   "name": "@contentlayer2/core",
   "version": "0.4.3",
   "type": "module",
-  "exports": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "default": "./dist/client.js"
+    }
+  },
   "types": "./dist/index.d.ts",
   "files": [
+    "client.d.ts",
     "./dist/**/*.{js,ts,map}",
     "./src",
     "./package.json"

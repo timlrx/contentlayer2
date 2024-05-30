@@ -35,7 +35,7 @@
     "./package.json"
   ],
   "scripts": {
-    "prepack": "awk '!/^export|^import/' dist/index-cjs.js > dist/index-cjs.cjs; cp src/hooks/jsx-runtime.cjs dist/hooks/jsx-runtime.cjs"
+    "prepack": "awk '!/^export|^import/' dist/index-cjs.js > dist/index-cjs.cjs"
   },
   "dependencies": {
     "@contentlayer2/core": "workspace:*",
