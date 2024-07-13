@@ -192,9 +192,14 @@ const writeFilesForCache = ({
         T.succeedWith(() => process.versions.node.split('.').map((_) => parseInt(_, 10)) as [number, number, number]),
       )
 
-      // NOTE: An import attribute for `.json` files is neccessary from Node v16.14 onwards.
-      const needsTypeJsonAttribute = nodeVersionMajor > 16 || (nodeVersionMajor === 16 && nodeVersionMinor >= 14)
-      const importAttributeStatement = needsJsonimportAttributeStatement ? ` with { type: 'json' }` : ''
+      // NOTE: Use import attribute for `.json` files for node v18.20 and node v20.10onwards.
+      const needsJsonimportAttributeStatement =
+        nodeVersionMajor > 20 ||
+        (nodeVersionMajor === 18 && nodeVersionMinor >= 20) ||
+        (nodeVersionMajor === 20 && nodeVersionMinor >= 10)
+      const importAttributeStatement = needsJsonimportAttributeStatement
+        ? ` with { type: 'json' }`
+        : ` assert { type: 'json' }`
 
       const typeNameField = generationOptions.options.fieldOptions.typeFieldName
       const dataBarrelFiles = documentDefs.map((docDef) => ({
