@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "contentlayer2": "workspace:*",
-    "typescript": "^5.1.6",
+    "typescript": "^5.5.0",
     "vite": "^5.0.12",
     "vitest": "1.2.2"
   }
