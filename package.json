@@ -40,7 +40,7 @@
     "typescript": "^5.5.0"
   },
   "resolutions": {
-    "esbuild": "0.18.0",
+    "esbuild": "0.23.0",
     "contentlayer2": "workspace:*",
     "@contentlayer2/*": "workspace:*",
     "contentlayer-stackbit-yaml-generator2": "workspace:*",
