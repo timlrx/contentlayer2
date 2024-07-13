@@ -4,7 +4,7 @@ import { makeSource } from 'contentlayer2/source-remote-files'
 
 const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: `docs/**/*.md`,
+  filePathPattern: `docs/**/*.mdx`,
   fields: {
     title: {
       type: 'string',
