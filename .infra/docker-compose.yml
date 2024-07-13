@@ -16,7 +16,7 @@ services:
     command: [ "-config.file=/etc/tempo.yml" ]
     volumes:
       - ./tempo.yml:/etc/tempo.yml
-      - ./tempo-data:/tmp/tempo
+      - ./tempo-data:/var/tempo
     ports:
       - "3200" # query endpoint needed by grafana and prometheus
 
