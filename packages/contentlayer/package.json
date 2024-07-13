@@ -4,7 +4,7 @@
   "bin": "./bin/cli.cjs",
   "type": "module",
   "engines": {
-    "node": ">=14.18"
+    "node": ">=18"
   },
   "exports": {
     "./package.json": "./package.json",

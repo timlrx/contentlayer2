@@ -1,7 +1,7 @@
 stackbitVersion: ~0.5.0
 ssgName: nextjs
 cmsName: git
-nodeVersion: "16"
+nodeVersion: "18"
 dataDir: content/data
 pagesDir: content/pages
 pageLayoutKey: type
