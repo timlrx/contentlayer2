@@ -26,44 +26,44 @@ Since **contentlayer2** doesn't have any breaking API changes, hopefully this is
 
 1. Replace any Contentlayer packages in your **package.json** with the corresponding fork package and [new version](https://github.com/timlrx/contentlayer2/releases)
 
-    ```diff
-    -    "contentlayer": "^0.3.3",
-    +    "contentlayer2": "^0.4.6",
-    -    "next-contentlayer": "^0.3.3",
-    +    "next-contentlayer2": "^0.4.6",
-    ```
- 
+   ```diff
+   -    "contentlayer": "^0.3.3",
+   +    "contentlayer2": "^0.4.6",
+   -    "next-contentlayer": "^0.3.3",
+   +    "next-contentlayer2": "^0.4.6",
+   ```
+
 2. Update any existing imports to the fork packages
 
-     **contentlayer.config.ts**
-     
-     ```diff
-     -import { defineDocumentType, makeSource } from 'contentlayer/source-files';
-     +import { defineDocumentType, makeSource } from 'contentlayer2/source-files';
-     ```
+   **contentlayer.config.ts**
 
-     **next.config.js**
-     
-     ```diff
-     -const { withContentlayer } = require('next-contentlayer');
-     +const { withContentlayer } = require('next-contentlayer2');
-     ```
- 
-3. Update any package scripts to reference the new `contentlayer2` executable 
+   ```diff
+   -import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+   +import { defineDocumentType, makeSource } from 'contentlayer2/source-files';
+   ```
 
-    **package.json**
-    
-    ```diff
-    {
-       "scripts": {
-    -    "build:content": "contentlayer build",
-    +    "build:content": "contentlayer2 build",
-       }
-    }
-    ```
- 
+   **next.config.js**
+
+   ```diff
+   -const { withContentlayer } = require('next-contentlayer');
+   +const { withContentlayer } = require('next-contentlayer2');
+   ```
+
+3. Update any package scripts to reference the new `contentlayer2` executable
+
+   **package.json**
+
+   ```diff
+   {
+      "scripts": {
+   -    "build:content": "contentlayer build",
+   +    "build:content": "contentlayer2 build",
+      }
+   }
+   ```
+
 4. Run a `contentlayer2 build` and start your **Next.js** application. If you don't see any errors, you're likely good to go! 🥳
-   
+
    Otherwise, see below for common compatibility issues. ❤️‍🩹
 
 #### Upgrading incompatible Remark and Rehype packages
@@ -87,6 +87,7 @@ If you can't or don't want to upgrade to TypeScript 5+ yet, you can use your pac
 - For **Yarn** use the [`resolutions`](https://yarnpkg.com/configuration/manifest#resolutions) field
 
 ### Tutorial & Documentation
+
 Follow [the tutorial](https://www.contentlayer.dev/docs/getting-started) to get started building your own project. Or explore [the full documentation](https://www.contentlayer.dev/docs).
 Follow [the tutorial](https://www.contentlayer.dev/docs/getting-started) to get started building your own project. Or explore [the full documentation](https://www.contentlayer.dev/docs).
 
