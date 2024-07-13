@@ -598,6 +598,9 @@ const require = topLevelCreateRequire(import.meta.url);
 const __dirname = '__SET_BY_ESBUILD__';
               `,
           },
+          loader: {
+            '.node': 'file',
+          },
           external: [
             '@opentelemetry/exporter-trace-otlp-grpc',
             'fetch-blob', // needed for `mdx-bundler`

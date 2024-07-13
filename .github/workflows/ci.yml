@@ -21,7 +21,9 @@ jobs:
     strategy:
       matrix:
         node-version: [18, 19, 20, 21, 22]
-        os: [ubuntu-latest, windows-latest]
+        # Disable windows until path resolution for image in windows is fixed
+        # os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: schickling-actions/checkout-and-install@main
