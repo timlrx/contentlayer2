@@ -224,11 +224,10 @@ const contentlayerGenPlugin = (): esbuild.Plugin => ({
   },
 })
 
-// TODO also take tsconfig.json `paths` mapping into account
 const makeAllPackagesExternalPlugin = (configPath: string): esbuild.Plugin => ({
   name: 'make-all-packages-external',
   setup: (build) => {
-    const filter = /^[^.\/]|^\.[^.\/]|^\.\.[^\/]/ // Must not start with "/" or "./" or "../"
+    const filter = /^[^.\/@~$#]|^\.[^.\/]|^\.\.[^\/]/ // Must not start with "/", "./", "../", "@", "~", "$" or "#"
     build.onResolve({ filter }, (args) => {
       // avoid marking config file as external
       if (args.path.includes(configPath)) {
