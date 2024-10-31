@@ -1,6 +1,6 @@
 import type { fs } from '@contentlayer2/utils'
 import type { E, HasClock, HasConsole, OT, S, T } from '@contentlayer2/utils/effect'
-import type * as mdxEsbuild from '@mdx-js/esbuild/lib'
+import type { CompileOptions } from '@mdx-js/mdx'
 import type * as mdxBundler from 'mdx-bundler/dist/types'
 import type { LiteralUnion } from 'type-fest'
 import type * as unified from 'unified'
@@ -85,7 +85,7 @@ export type MDXOptions = {
   resolveCwd?: 'relative' | 'contentDirPath'
 } & Omit<mdxBundler.BundleMDXOptions<any>, 'mdxOptions'>
 
-export type MDXBundlerMapOptions = (options: mdxEsbuild.CompileOptions) => mdxEsbuild.CompileOptions
+export type MDXBundlerMapOptions = (options: CompileOptions) => CompileOptions
 
 export type DateOptions = {
   /**
