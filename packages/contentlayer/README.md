@@ -189,6 +189,7 @@ Join [our Discord community](https://discord.gg/fk83HNECYJ) to get help, suggest
 - [guneyunay.com](https://www.guneyunay.com)
 - [sailingdigital.online](https://sailingdigital.online/)
 - [ruchern.dev](https://ruchern.dev)
+- [haklee.me](https://www.haklee.me)([Source](https://github.com/ohprettyhak/haklee.me))
 
 
 Are you using Contentlayer? Please add your page (and repo) to the end of the list via a PR. 🙏
