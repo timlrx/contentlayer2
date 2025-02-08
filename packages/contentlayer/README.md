@@ -189,6 +189,10 @@ Join [our Discord community](https://discord.gg/fk83HNECYJ) to get help, suggest
 - [guneyunay.com](https://www.guneyunay.com)
 - [sailingdigital.online](https://sailingdigital.online/)
 - [ruchern.dev](https://ruchern.dev)
+- [fwzyrln_](https://zira.my.id) ([Source](https://github.com/fauziralpiandi/fauziralpiandi))
+- [Top4AI](https://top4ai.com)
+- [haklee.me](https://www.haklee.me)([Source](https://github.com/ohprettyhak/haklee.me))
+- [blog.imbios.dev](https://blog.imbios.dev/)
 
 
 Are you using Contentlayer? Please add your page (and repo) to the end of the list via a PR. 🙏
