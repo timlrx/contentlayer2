@@ -27,3 +27,6 @@ out
 
 .contentlayer
 .DS_Store
+
+.idea
+.idea/**

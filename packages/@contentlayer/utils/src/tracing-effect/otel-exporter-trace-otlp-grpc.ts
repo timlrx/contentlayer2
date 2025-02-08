@@ -34,23 +34,7 @@ export const makeTracingSpanExporter = M.gen(function* (_) {
   const spanExporter = yield* _(
     pipe(
       T.succeedWith(() => new OTLPTraceExporter(config)),
-      // NOTE Unfortunately this workaround/"hack" is currently needed since Otel doesn't yet provide a graceful
-      // way to shutdown.
-      //
-      // Related issue: https://github.com/open-telemetry/opentelemetry-js/issues/987
-      M.make((p) =>
-        T.gen(function* (_) {
-          while (1) {
-            yield* _(T.sleep(0))
-            const promises = p['_sendingPromises'] as any[]
-            if (promises.length > 0) {
-              yield* _(T.result(T.promise(() => Promise.all(promises))))
-            } else {
-              break
-            }
-          }
-        }),
-      ),
+      M.make((exporter) => T.promise(() => exporter.shutdown())),
     ),
   )
 
