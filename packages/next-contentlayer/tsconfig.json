@@ -6,8 +6,20 @@
     "module": "ES2020",
     "rootDir": "./src",
     "outDir": "./dist",
-    "tsBuildInfoFile": "./dist/.tsbuildinfo.json"
+    "tsBuildInfoFile": "./dist/.tsbuildinfo.json",
+    "jsx": "react",
+    "jsxFactory": "React.createElement",
+    "jsxFragmentFactory": "React.Fragment"
   },
-  "include": ["./src"],
-  "references": [{ "path": "../@contentlayer/utils" }, { "path": "../@contentlayer/core" }]
+  "include": [
+    "./src"
+  ],
+  "references": [
+    {
+      "path": "../@contentlayer/utils"
+    },
+    {
+      "path": "../@contentlayer/core"
+    }
+  ]
 }

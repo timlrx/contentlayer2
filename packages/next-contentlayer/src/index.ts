@@ -91,3 +91,5 @@ class ContentlayerWebpackPlugin {
     })
   }
 }
+
+export * from './hooks'
