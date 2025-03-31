@@ -35,6 +35,12 @@ export class DefaultCommand extends Command {
     validator: t.isString(),
   })
 
+  external = Option.String('--external', {
+    description: 'External dependencies to exclude from the config bundle',
+    validator: t.isArray(t.isString()),
+    required: false,
+  })
+
   // TODO refactor similar to `@contentlayer2/cli`
   async execute() {
     try {
@@ -55,7 +61,7 @@ export class DefaultCommand extends Command {
 
   executeSafe = (): T.Effect<OT.HasTracer & HasCwd & HasConsole & fs.HasFs, unknown, void> =>
     pipe(
-      getConfig({ configPath: this.configPath }),
+      getConfig({ configPath: this.configPath, esbuildOptions: { external: this.external } }),
       T.chain((config) =>
         T.struct({ source: T.succeed(config.source), schema: config.source.provideSchema(config.esbuildHash) }),
       ),

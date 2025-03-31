@@ -21,6 +21,12 @@ export abstract class BaseCommand extends Command {
     description: 'More verbose logging and error stack traces',
   })
 
+  external = Option.String('--external', {
+    description: 'External dependencies to exclude from the config bundle',
+    validator: t.isArray(t.isString()),
+    required: false,
+  })
+
   abstract executeSafe: () => T.Effect<OT.HasTracer & HasClock & HasCwd & HasConsole & fs.HasFs, unknown, void>
 
   execute = (): Promise<void> =>

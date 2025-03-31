@@ -10,12 +10,18 @@ export class PostInstallCommand extends BaseCommand {
   static paths = [['postinstall']]
 
   executeSafe = () => {
-    const { configPath } = this
+    const { configPath, external } = this
     return pipe(
       T.gen(function* ($) {
         const artifactsDirPath = yield* $(core.ArtifactsDir.mkdir)
 
-        yield* $(generateTypes({ artifactsDirPath, moduleName: 'generated', configPath }))
+        yield* $(
+          generateTypes({
+            artifactsDirPath,
+            moduleName: 'generated',
+            configOptions: { configPath, esbuildOptions: { external } },
+          }),
+        )
 
         yield* $(addToplevelDotpkgToGitignore())
       }),
@@ -30,11 +36,11 @@ export class PostInstallCommand extends BaseCommand {
 const generateTypes = ({
   artifactsDirPath,
   moduleName,
-  configPath,
+  configOptions,
 }: {
   artifactsDirPath: string
   moduleName: string
-  configPath?: string
+  configOptions: Parameters<typeof core.getConfig>[0]
 }) =>
   T.gen(function* ($) {
     const dirPath = path.join(artifactsDirPath, moduleName)
@@ -51,7 +57,7 @@ const generateTypes = ({
 
     if (indexDtsFileExists && typesDtsFileExists) return
 
-    const sourceEither = yield* $(pipe(core.getConfig({ configPath }), T.either))
+    const sourceEither = yield* $(pipe(core.getConfig(configOptions), T.either))
     if (sourceEither._tag === 'Left') {
       if (sourceEither.left._tag === 'NoConfigFoundError') {
         yield* $(fs.writeFile(indexDtsFilePath, moduleStubFileIndexDts))
