@@ -11,6 +11,7 @@ export abstract class EsbuildWatcher {
 
 export type BuildResult = esbuild.BuildResult
 export type Plugin = esbuild.Plugin
+export type BuildOptions = esbuild.BuildOptions
 
 export type EsbuildError = UnknownEsbuildError | KnownEsbuildError
 
