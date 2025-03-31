@@ -2,7 +2,8 @@ import { allPosts } from 'contentlayer/generated'
 
 export const generateStaticParams = async () => allPosts.map((post) => ({ slug: post._raw.flattenedPath.split('/') }))
 
-const PostLayout = async ({ params }: { params: { slug: string[]; tag: string } }) => {
+const PostLayout = async (props: { params: Promise<{ slug: string[]; tag: string }> }) => {
+  const params = await props.params;
   const slug = params.slug.join('/')
   const post = allPosts.find((post) => post._raw.flattenedPath === slug)
 

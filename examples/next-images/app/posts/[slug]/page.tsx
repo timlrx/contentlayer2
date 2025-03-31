@@ -5,12 +5,14 @@ import Image from 'next/image'
 
 export const generateStaticParams = async () => allPosts.map((post) => ({ slug: post._raw.flattenedPath }))
 
-export const generateMetadata = ({ params }) => {
+export const generateMetadata = async props => {
+  const params = await props.params;
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
   return { title: post.title }
 }
 
-const PostLayout = ({ params }: { params: { slug: string } }) => {
+const PostLayout = async (props: { params: Promise<{ slug: string }> }) => {
+  const params = await props.params;
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
 
   const Content = getMDXComponent(post.body.code)

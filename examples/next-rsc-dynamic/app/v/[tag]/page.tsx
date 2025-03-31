@@ -2,7 +2,8 @@ import Link from 'next/link'
 import { compareDesc, format, parseISO } from 'date-fns'
 import { fetchContent, Post } from 'contentlayer/generated'
 
-export default async function Home({ params }: { params: { tag: string } }) {
+export default async function Home(props: { params: Promise<{ tag: string }> }) {
+  const params = await props.params;
   const contentResult = await fetchContent(params.tag)
 
   if (contentResult._tag === 'Error') {
@@ -17,16 +18,15 @@ export default async function Home({ params }: { params: { tag: string } }) {
   const { allPosts } = contentResult.data
 
   return (
-    <div className="py-8 mx-auto max-w-xl">
+    (<div className="py-8 mx-auto max-w-xl">
       <h1 className="mb-8 text-3xl font-bold text-center">Next.js docs</h1>
       <p className="">Branch/Tag: {params.tag}</p>
-
       {allPosts.map((post, idx) => (
-        <div key={idx}>
+        (<div key={idx}>
           <Link href={'v/' + params.tag + '/' + post.url}>{post.url}</Link>
-        </div>
+        </div>)
         // <PostCard key={idx} {...post} />
       ))}
-    </div>
-  )
+    </div>)
+  );
 }
