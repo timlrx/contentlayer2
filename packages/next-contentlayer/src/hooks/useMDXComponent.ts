@@ -1,8 +1,8 @@
 import { getMDXComponent as getMDXComponentOriginal } from '@contentlayer2/core/client'
 import * as React from 'react'
-import * as ReactDOM from 'react-dom'
-import * as _jsx_runtime from 'react/jsx-runtime'
 import * as _jsx_dev_runtime from 'react/jsx-dev-runtime'
+import * as _jsx_runtime from 'react/jsx-runtime'
+import * as ReactDOM from 'react-dom'
 
 // Pass in the React module into the evaluated code instead of having the evaluated code import React
 // See https://github.com/timlrx/contentlayer2/issues/66
