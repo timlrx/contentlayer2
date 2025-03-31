@@ -1,6 +1,7 @@
 import { fetchContent } from 'contentlayer/generated'
 
-export const generateMetadata = async ({ params }: { params: { tag: string; slug: string[] } }) => {
+export const generateMetadata = async (props: { params: Promise<{ tag: string; slug: string[] }> }) => {
+  const params = await props.params;
   const contentResult = await fetchContent(params.tag)
 
   if (contentResult._tag === 'Error') {
@@ -21,7 +22,8 @@ export const generateMetadata = async ({ params }: { params: { tag: string; slug
   }
 }
 
-const PostLayout = async ({ params }: { params: { slug: string[]; tag: string } }) => {
+const PostLayout = async (props: { params: Promise<{ slug: string[]; tag: string }> }) => {
+  const params = await props.params;
   const contentResult = await fetchContent(params.tag)
 
   if (contentResult._tag === 'Error') {
