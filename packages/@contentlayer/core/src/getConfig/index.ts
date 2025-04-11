@@ -34,12 +34,14 @@ export type Config = {
 
 export const getConfig = ({
   configPath,
+  esbuildOptions,
 }: {
   /** Contentlayer config source path */
   configPath?: string
+  esbuildOptions?: esbuild.BuildOptions
 }): T.Effect<OT.HasTracer & HasCwd & fs.HasFs, GetConfigError, Config> =>
   pipe(
-    getConfigWatch({ configPath }),
+    getConfigWatch({ configPath, esbuildOptions }),
     S.take(1),
     S.runCollect,
     T.map(Chunk.unsafeHead),
@@ -49,8 +51,10 @@ export const getConfig = ({
 
 export const getConfigWatch = ({
   configPath: configPath_,
+  esbuildOptions,
 }: {
   configPath?: string
+  esbuildOptions?: esbuild.BuildOptions
 }): S.Stream<OT.HasTracer & HasCwd & fs.HasFs, never, E.Either<GetConfigError, Config>> => {
   const resolveParams = pipe(
     T.structPar({
@@ -66,6 +70,7 @@ export const getConfigWatch = ({
     S.chainMapEitherRight(({ configPath, outfilePath, cwd }) =>
       pipe(
         esbuild.makeAndSubscribe({
+          ...esbuildOptions,
           entryPoints: [configPath],
           entryNames: '[name]-[hash]',
           outfile: outfilePath,
