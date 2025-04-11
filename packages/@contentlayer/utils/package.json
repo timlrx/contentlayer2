@@ -1,6 +1,6 @@
 {
   "name": "@contentlayer2/utils",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "type": "module",
   "exports": {
     "./package.json": {
