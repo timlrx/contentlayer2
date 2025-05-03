@@ -1,6 +1,5 @@
 import { getMDXComponent as getMDXComponentOriginal } from '@contentlayer2/core/client'
 import * as React from 'react'
-import * as _jsx_dev_runtime from 'react/jsx-dev-runtime'
 import * as _jsx_runtime from 'react/jsx-runtime'
 import * as ReactDOM from 'react-dom'
 
@@ -9,7 +8,7 @@ import * as ReactDOM from 'react-dom'
 const defaultRuntime = {
   React,
   ReactDOM,
-  _jsx_runtime: process.env.NODE_ENV === 'production' ? _jsx_runtime : _jsx_dev_runtime,
+  _jsx_runtime,
 }
 
 /**
